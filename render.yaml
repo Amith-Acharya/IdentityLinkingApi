@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: identity-linking-api
+    env: docker
+    dockerfilePath: Dockerfile
+    dockerContext: .
+    # Render automatically exposes the PORT environment variable
+    envVars:
+      - key: ASPNETCORE_ENVIRONMENT
+        value: Production
+      - key: DATABASE_PATH
+        value: /app/data/identity.db
